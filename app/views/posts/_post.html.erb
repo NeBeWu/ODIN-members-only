@@ -1,12 +1,18 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p>
-    <strong>Body:</strong>
-    <%= post.body %>
-  </p>
-
-</div>
+<article class="media">
+  <div class="media-left">
+    <figure class="image is-64x64">
+      <img src="https://bulma.io/images/placeholders/128x128.png">
+    </figure>
+    <%#= render "nav", post: post %>
+  </div>
+  <div class="media-content">
+    <div class="content">
+      <div class="block">
+        <p class="title is-5"><%= post.title %></p>
+      </div>
+      <div class="block">
+        <%= post.body %>
+      </div>
+    </div>
+  </div>
+</article>

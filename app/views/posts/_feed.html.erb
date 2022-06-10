@@ -1,0 +1,12 @@
+<div class="column is-half is-offset-one-quarter has-background-light">
+  <% if user_signed_in? %>
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <%= render 'form', post: @post %>
+        </div>
+      </div>
+    </article>
+  <% end %>
+  <%= render @posts %>
+</div>
