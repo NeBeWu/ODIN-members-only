@@ -16,4 +16,7 @@
 
  @import "bulma";
 
- 
+.media + .media {
+    border-width: 1px;
+    border-color: darkgray;
+}

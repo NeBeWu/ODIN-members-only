@@ -1,7 +1,11 @@
 <article class="media">
   <div class="media-left">
     <figure class="image is-64x64">
-  <%= gravatar_image_tag(post.user&.email, alt: post.user&.username, class: "is-rounded") %>
+      <% if user_signed_in? && !post.user.nil? %>
+        <%= gravatar_image_tag(post.user&.email, alt: post.user&.username, class: "is-rounded") %>
+      <% else %>
+        <%= image_tag "pixil-frame-0.png", class: "is-rounded" %>
+      <% end %>
     </figure>
     <%#= render "nav", post: post %>
   </div>
