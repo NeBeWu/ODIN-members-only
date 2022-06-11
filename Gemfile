@@ -52,6 +52,7 @@ gem "sassc-rails"
 gem 'devise', '~> 4.2'
 gem 'bulma-rails', '~> 0.9.3'
 gem 'gravatar_image_tag', '~> 1.2'
+gem 'digest'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
