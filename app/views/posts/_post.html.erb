@@ -7,16 +7,21 @@
         <%= image_tag "pixil-frame-0.png", class: "is-rounded" %>
       <% end %>
     </figure>
-    <%#= render "nav", post: post %>
   </div>
   <div class="media-content">
     <div class="content">
       <% if user_signed_in? %>
-        <p class="title is-6">
-          <%= post.user.nil? ? "Deleted User" : "#{post.user.username}" %>
+        <p>
+          <strong>Some title the user chose</strong> <%# implement title%>
+          <i><%= post.user.nil? ? "@deleted_user" : "@#{post.user.username}" %></i>
+          <%= time_passed(post) %>
         </p>
       <% end %>
       <p style="white-space: pre-line"><%= post.content %></p>
     </div>
+    <%= render "nav", post: post if user_signed_in? %>
+  </div>
+  <div class="media-right">
+    <%= link_to 'Show', post %>
   </div>
 </article>

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :nullify
 
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, length: { in: 1..32 }
   validates :email, presence: true, uniqueness: true
 
   # Include default devise modules. Others available are:
