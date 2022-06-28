@@ -23,6 +23,6 @@
     <%= render "nav", post: post if user_signed_in? %>
   </div>
   <div class="media-right">
-    <%= link_to 'Show', post if user_signed_in? %>
+    <%= link_to 'Show', post if user_signed_in? && !current_page?("http://localhost:3000/posts/#{post.id}")%>
   </div>
 </article>

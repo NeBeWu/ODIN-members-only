@@ -1,5 +1,7 @@
-Check post CRUD
+Check post CRUD-
 +Removes title attribute from post
++Customize new page (used when post creation goes wrong)
++Customize show page
 Check user CRUD
  Add user title limit 32, username 16, password 8 (minimum)
 Interaction
