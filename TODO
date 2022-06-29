@@ -1,17 +1,17 @@
 Check post CRUD-
-+Removes title attribute from post
-+Customize new page (used when post creation goes wrong)
-+Customize show page
-Check user CRUD
- Add user title limit 32, username 16, password 8 (minimum)
+  Removes title attribute from post+
+  Customize new page (used when post creation goes wrong)+
+  Customize show page+
+Check user CRUD-
+  Add user title limit 32 (may be null), username 16, password 8 (minimum)+
 Interaction
--Devise error message I18n customize
-+Login with empty fields should equal signup
-+Remove show from non-users
+  Devise error message I18n customize-
+  Login with empty fields should equal signup+
+  Remove show from non-users+
 Features
- Implement like
- Implement dislike
- Implement bookmark
- Implement comments
+  Implement like
+  Implement dislike
+  Implement bookmark
+  Implement comments
 Big features
- Implement user top posts
+  Implement user top posts

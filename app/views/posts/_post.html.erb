@@ -12,7 +12,7 @@
     <div class="content">
       <% if user_signed_in? %>
         <p style="margin-bottom:0">
-          <strong>Some title the user chose</strong><%# implement title%>
+        <strong><%= post.user.nil? ? "The owner of this post was deleted" : "#{post.user.title}" %></strong><%# implement title%>
           <i><%= post.user.nil? ? "@deleted_user" : "@#{post.user.username}" %></i>
           <%= "\u00b7" %>
           <%= time_passed(post) %>
