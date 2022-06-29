@@ -20,6 +20,14 @@
           </div>
         </div>
         <%= render @post %>
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <%= render 'reply', reply: @reply %>
+            </div>
+          </div>
+        </article>
+        <%= render @replies %>
       </div>
     </div>
   </div>

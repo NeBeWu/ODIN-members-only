@@ -11,7 +11,10 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1 or /posts/1.json
-  def show; end
+  def show
+    @replies = @post.replies
+    @reply = Post.new
+  end
 
   # GET /posts/new
   def new
@@ -27,7 +30,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to :root, notice: 'Post was successfully created.' }
+        format.html { redirect_back_or_to :root, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -58,6 +61,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :parent_id)
   end
 end
