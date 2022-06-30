@@ -1,13 +1,26 @@
 <nav class="level is-mobile">
-  <div class="level-left">
-    <%= link_to nil, class: "level-item" do %>
+  <div class="level-item">
+    <%= link_to post do %>
       <span class="icon is-small"><i class="fa fa-reply" ></i></span>
+    <%= post.replies.count %>
     <% end %>
-    <%= link_to nil, class: "level-item" do %>
+  </div>
+  <div class="level-item">
+    <%= link_to nil do %>
+      <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
+    <%= '10' %>
+    <% end %>
+  </div>
+  <div class="level-item">
+    <%= link_to nil do %>
       <span class="icon is-small"><i class="fa fa-thumbs-o-up" ></i></span>
+    <%= '500' %>
     <% end %>
-    <%= link_to nil, class: "level-item" do %>
+  </div>
+  <div class="level-item">
+    <%= link_to nil do %>
       <span class="icon is-small"><i class="fa fa-thumbs-o-down" ></i></span>
+    <%= '7' %>
     <% end %>
   </div>
 </nav>
