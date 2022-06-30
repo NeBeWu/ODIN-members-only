@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_29_193703) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_30_212929) do
   create_table "posts", force: :cascade do |t|
-    t.string "content", limit: 300, null: false
+    t.string "content", limit: 300
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "parent_id"
+    t.integer "repost_id"
     t.index ["parent_id"], name: "index_posts_on_parent_id"
+    t.index ["repost_id"], name: "index_posts_on_repost_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -37,5 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_193703) do
   end
 
   add_foreign_key "posts", "posts", column: "parent_id"
+  add_foreign_key "posts", "posts", column: "repost_id"
   add_foreign_key "posts", "users"
 end
