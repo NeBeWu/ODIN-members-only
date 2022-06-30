@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @currently_showing = @post.id
     @replies = @post.replies
     @reply = Post.new
   end
@@ -28,15 +29,28 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_back_or_to :root, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.save
+      redirect_back_or_to :root, notice: 'Post was successfully created.'
+    elsif @post.parent_id.nil?
+      create_from_index
+    else
+      create_from_show
     end
+  end
+
+  def create_from_index
+    @posts = Post.all.order('created_at DESC')
+
+    render :index, status: :unprocessable_entity
+  end
+
+  def create_from_show
+    @reply = @post
+    @post = Post.find(@post.parent_id)
+    @replies = @post.replies
+    @currently_showing = @post.id
+
+    render :show, status: :unprocessable_entity
   end
 
   # PATCH/PUT /posts/1 or /posts/1.json
@@ -48,7 +62,6 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
