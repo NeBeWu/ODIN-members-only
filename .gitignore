@@ -36,3 +36,6 @@
 
 # Ignore asdf files
 /.tool-versions
+
+# Ignore rubocop files
+/.rubocop.yml
