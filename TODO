@@ -3,6 +3,8 @@ Check post CRUD-
   Customize new page (used when post creation goes wrong)+
   Customize show page+
   Transfered show link to a reply link in the navbar+
+  Routes accesses
+  Add link top post by clicking it
 Check user CRUD-
   Add user title limit 32 (may be null), username 16, password 8 (minimum)+
 Interaction
@@ -14,5 +16,6 @@ Features
   Implement dislike
   Implement bookmark
   Implement reply+
+  Implement repost-
 Big features
   Implement user top posts
