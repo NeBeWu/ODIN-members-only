@@ -1,6 +1,6 @@
 <div class="column is-half is-offset-one-quarter has-background-light">
   <% if user_signed_in? %>
-    <article class="media">
+    <article class="media separated">
       <div class="media-content">
         <div class="content">
           <%= render 'form', post: @post %>
@@ -8,5 +8,5 @@
       </div>
     </article>
   <% end %>
-  <%= render @posts %>
+  <%= render @posts, repost: @post %>
 </div>

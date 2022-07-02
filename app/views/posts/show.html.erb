@@ -19,7 +19,7 @@
             </div>
           </div>
         </div>
-        <%= render @post %>
+        <%= render @post, repost: @reply %>
         <article class="media">
           <div class="media-content">
             <div class="content">
@@ -27,7 +27,7 @@
             </div>
           </div>
         </article>
-        <%= render @replies %>
+        <%= render @replies, repost: @reply %>
       </div>
     </div>
   </div>

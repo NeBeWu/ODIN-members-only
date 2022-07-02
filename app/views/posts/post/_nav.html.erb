@@ -2,25 +2,22 @@
   <div class="level-item">
     <%= link_to post do %>
       <span class="icon is-small"><i class="fa fa-reply" ></i></span>
-    <%= post.replies.count %>
+      <%= post.replies.count %>
     <% end %>
   </div>
   <div class="level-item">
-    <%= link_to nil do %>
-      <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
-    <%= '10' %>
-    <% end %>
+    <%= render "posts/post/nav/repost", post: post, repost: repost %>
   </div>
   <div class="level-item">
     <%= link_to nil do %>
       <span class="icon is-small"><i class="fa fa-thumbs-o-up" ></i></span>
-    <%= '500' %>
+      <%= '500' %>
     <% end %>
   </div>
   <div class="level-item">
     <%= link_to nil do %>
       <span class="icon is-small"><i class="fa fa-thumbs-o-down" ></i></span>
-    <%= '7' %>
+      <%= '7' %>
     <% end %>
   </div>
 </nav>

@@ -1,0 +1,10 @@
+<%= form_with(model: repost) do |form| %>
+  <div class="field">
+    <%= form.hidden_field :source_id, value: post.id %>
+  </div>
+  <div class="field">
+    <%= form.button "Repost", class: "submitlink has-text-link" %>
+    <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
+    <%= post.reposts.count %>
+  </div>
+<% end %>

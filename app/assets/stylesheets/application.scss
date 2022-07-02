@@ -16,7 +16,37 @@
 
  @import "bulma";
 
-.media + .media {
-    border-width: 1px;
-    border-color: darkgray;
+// .media + .media {
+//     border-width: 1px;
+//     border-color: darkgray;
+// }
+
+.level.repost {
+  margin-bottom: 0px;
+  height: 1.2rem;
+  font-size: 0.9em;
+}
+
+.level-item.repost-symbol {
+  width: 64px;
+  justify-content: end;
+}
+
+.level-item.repost-title {
+  margin-left: 0.25rem;
+}
+
+.separated {
+  padding-top: 0.75rem;
+}
+
+.separated + .separated {
+  border-top: 1px solid darkgray;
+}
+
+.submitlink {
+  background-color: transparent;
+  text-decoration: inline;
+  border: none;
+  cursor: pointer;
 }

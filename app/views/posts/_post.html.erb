@@ -1,25 +1,13 @@
-<article class="media">
-  <div class="media-left">
-    <figure class="image is-64x64">
-      <% if user_signed_in? && !post.user.nil? %>
-        <%= gravatar_image_tag(post.user&.email, alt: post.user&.username, class: "is-rounded") %>
-      <% else %>
-        <%= image_tag "pixil-frame-0.png", class: "is-rounded" %>
-      <% end %>
-    </figure>
-  </div>
-  <div class="media-content">
-    <div class="content">
-      <% if user_signed_in? %>
-        <p style="margin-bottom:0">
-        <strong><%= post.user.nil? ? "The owner of this post was deleted" : "#{post.user.title}" %></strong><%# implement title%>
-          <i><%= post.user.nil? ? "@deleted_user" : "@#{post.user.username}" %></i>
-          <%= "\u00b7" %>
-          <%= time_passed(post) %>
-        </p>
-      <% end %>
-      <p style="white-space: pre-line"><%= post.content %></p>
+<div class="block separated" style="<%= "padding-top: 0.25rem" if post.a_repost? %>">
+  <%= render "posts/post/repost", post: post if user_signed_in? && post.a_repost? %>
+  <article class="media">
+    <% post = post.source if post.a_repost? %>
+    <div class="media-left">
+      <%= render "posts/post/user", post: post %>
     </div>
-    <%= render "nav", post: post if user_signed_in? %>
-  </div>
-</article>
+    <div class="media-content">
+      <%= render "posts/post/content", post: post %>
+      <%= render "posts/post/nav", post: post, repost: repost if user_signed_in? %>
+    </div>
+  </article>
+</div>
