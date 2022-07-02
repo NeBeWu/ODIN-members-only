@@ -6,15 +6,14 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.order('created_at DESC')
     @post = Post.new
+    @posts = Post.all.order('created_at DESC')
   end
 
   # GET /posts/1 or /posts/1.json
   def show
-    @currently_showing = @post.id
-    @replies = @post.replies
     @reply = Post.new
+    @replies = @post.replies
   end
 
   # GET /posts/new
@@ -48,7 +47,6 @@ class PostsController < ApplicationController
     @reply = @post
     @post = Post.find(@post.parent_id)
     @replies = @post.replies
-    @currently_showing = @post.id
 
     render :show, status: :unprocessable_entity
   end
@@ -74,6 +72,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:content, :parent_id)
+    params.require(:post).permit(:content, :user_id, :parent_id, :source_id)
   end
 end
