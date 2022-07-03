@@ -1,10 +1,22 @@
-<%= form_with(model: repost) do |form| %>
-  <div class="field">
-    <%= form.hidden_field :source_id, value: post.id %>
-  </div>
-  <div class="field">
-    <%= form.button "Repost", class: "submitlink has-text-link" %>
-    <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
-    <%= post.reposts.count %>
-  </div>
+<% if repost.nil? %>
+  <%= form_with model: post, method: :delete do |form| %>
+    <div class="field">
+      <%= form.button nil, class: "submitlink has-text-primary" do %>
+        <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
+        <%= resource.reposts.count %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <%= form_with model: repost do |form| %>
+    <div class="field hidden">
+      <%= form.hidden_field :source_id, value: resource.id %>
+    </div>
+    <div class="field">
+      <%= form.button nil, class: "submitlink has-text-link" do %>
+        <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
+        <%= resource.reposts.count %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>

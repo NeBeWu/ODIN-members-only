@@ -1,12 +1,12 @@
 <nav class="level is-mobile">
   <div class="level-item">
-    <%= link_to post do %>
+    <%= link_to resource do %>
       <span class="icon is-small"><i class="fa fa-reply" ></i></span>
-      <%= post.replies.count %>
+      <%= resource.replies.count %>
     <% end %>
   </div>
   <div class="level-item">
-    <%= render "posts/post/nav/repost", post: post, repost: repost %>
+    <%= render "posts/post/nav/repost", resource: resource, post: post, repost: repost %>
   </div>
   <div class="level-item">
     <%= link_to nil do %>
