@@ -27,6 +27,6 @@ module PostsHelper
   def select_current_user_repost(post)
     post.reposts.select do |repost|
       repost.user_id == current_user.id
-    end
+    end.first
   end
 end
