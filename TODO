@@ -5,9 +5,10 @@ Check post CRUD-
   Customize new page (used when post creation goes wrong)+
   Customize show page+
   Transfered show link to a reply link in the navbar+
+  Rename post to new_post+
   Routes accesses
   Add link top post by clicking it
-  Rename post to new_post
+  Repost of repost behaviour
 Check user CRUD-
   Add user title limit 32 (may be null), username 16, password 8 (minimum)+
 Interaction
@@ -15,10 +16,14 @@ Interaction
   Login with empty fields should equal signup+
   Remove show from non-users+
 Features
+  Implement reply+
+  Implement repost+
   Implement like
   Implement dislike
   Implement bookmark
-  Implement reply+
-  Implement repost-
 Big features
   Implement user top posts
+
+## Current task
+
+Set up like...

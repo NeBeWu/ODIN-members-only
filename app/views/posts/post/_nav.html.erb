@@ -6,14 +6,13 @@
     <% end %>
   </div>
   <div class="level-item">
-    <%= render "posts/post/nav/repost", resource: resource, post: post, repost: repost %>
+    <%= render "posts/post/nav/repost", resource: resource, post: post %>
   </div>
   <div class="level-item">
-    <%= link_to nil do %>
-      <span class="icon is-small"><i class="fa fa-thumbs-o-up" ></i></span>
-      <%= '500' %>
-    <% end %>
+    <%= render "posts/post/nav/like", resource: resource, post: post %>
   </div>
+  <%= resource.user_id %>
+  <%= post.user_id %>
   <div class="level-item">
     <%= link_to nil do %>
       <span class="icon is-small"><i class="fa fa-thumbs-o-down" ></i></span>

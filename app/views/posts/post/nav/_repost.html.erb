@@ -1,5 +1,6 @@
-<% if repost.nil? %>
-  <%= form_with model: post, method: :delete do |form| %>
+<% if check_repost?(post) %>
+  <% repost = source_of_current_user_repost?(post) ? select_current_user_repost(post) : post %>
+  <%= form_with model: repost, method: :delete do |form| %>
     <div class="field">
       <%= form.button nil, class: "submitlink has-text-primary" do %>
         <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
@@ -8,7 +9,7 @@
     </div>
   <% end %>
 <% else %>
-  <%= form_with model: repost do |form| %>
+  <%= form_with model: @new_post do |form| %>
     <div class="field hidden">
       <%= form.hidden_field :source_id, value: resource.id %>
     </div>

@@ -7,9 +7,7 @@
     </div>
     <div class="media-content">
       <%= render "posts/post/content", post: resource %>
-      <% repost = check_repost?(post) ? nil : @new_post %>
-      <% post = select_current_user_repost(post) if source_of_current_user_repost?(post)  %>
-      <%= render "posts/post/nav", resource: resource, post: post, repost: repost if user_signed_in? %>
+      <%= render "posts/post/nav", resource: resource, post: post if user_signed_in? %>
     </div>
   </article>
 </div>
