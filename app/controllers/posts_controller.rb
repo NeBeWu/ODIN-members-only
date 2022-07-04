@@ -6,13 +6,13 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @post = Post.new
+    @new_post = Post.new
     @posts = Post.all.order('created_at DESC')
   end
 
   # GET /posts/1 or /posts/1.json
   def show
-    @reply = Post.new
+    @new_post = Post.new
     @replies = @post.replies
   end
 
@@ -30,10 +30,10 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_back_or_to :root, notice: 'Post was successfully created.'
-    elsif @post.parent_id.nil?
-      create_from_index
-    else
+    elsif @post.reply?
       create_from_show
+    else
+      create_from_index
     end
   end
 
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
   end
 
   def create_from_show
-    @reply = @post
+    @new_post = @post
     @post = Post.find(@post.parent_id)
     @replies = @post.replies
 

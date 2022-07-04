@@ -1,25 +1,25 @@
-<%= form_with(model: reply) do |form| %>
-  <% if reply.errors.any? %>
-    <div style="color: red">
-      <ul>
-        <% reply.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="column is-half is-offset-one-quarter" style="padding: 0px; border: 1px solid darkgray;">
+  <div class="level" style="padding-left: 1rem; padding-right: 1rem;">
+    <div class="level-left">
+      <div class="level-item">
+        <%= link_to "Back", posts_path %>
+      </div>
     </div>
-  <% end %>
-  <div class="field">
-    <%= form.hidden_field :parent_id, value: @post.id %>
-  </div>
-  <div class="field">
-    <div class="control">
-      <%= form.text_area :content, class: "textarea", required: true,
-    placeholder: "Post your reply", rows: "4" %>
+    <div class="level-item">
+      <h1 class="title">Thread</h1>
     </div>
-  </div>
-  <div class="field">
-    <div class="control buttons is-right">
-      <%= form.submit "Reply", class: "button is-black" %>
+    <div class="level-right">
+      <div class="level-item">
+        <%= button_to "Delete", @post, method: :delete,
+                form: { data: { "turbo-confirm": "Are you sure?" } },
+                class: "submitlink has-text-danger" %>
+      </div>
     </div>
   </div>
-<% end %>
+  <%= render @post %>
+  <div class="block separated">
+    <%= render "form", button_text: 'Reply',
+      textarea_text: 'Post your reply' %>
+  </div>
+  <%= render @replies %>
+</div>

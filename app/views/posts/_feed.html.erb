@@ -1,12 +1,9 @@
-<div class="column is-half is-offset-one-quarter has-background-light">
+<div class="column is-half is-offset-one-quarter " style="padding: 0px; border: 1px solid darkgray;">
   <% if user_signed_in? %>
-    <article class="media separated">
-      <div class="media-content">
-        <div class="content">
-          <%= render 'form', post: @post %>
-        </div>
-      </div>
-    </article>
+    <div class="block separated">
+      <%= render "form", button_text: 'Submit',
+        textarea_text: 'Please enter your text here limited to 300 characters.' %>
+    </div>
   <% end %>
-  <%= render @posts, repost: @post %>
+  <%= render @posts %>
 </div>

@@ -1,22 +1,25 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
+<%= form_with(model: @new_post) do |form| %>
+  <% if @new_post.errors.any? %>
     <div style="color: red">
       <ul>
-        <% post.errors.full_messages.each do |message| %>
+        <% @new_post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
   <div class="field">
+    <%= form.hidden_field :parent_id, value: @post.id unless @post.nil? %>
+  </div>
+  <div class="field">
     <div class="control">
       <%= form.text_area :content, class: "textarea", required: true,
-    placeholder: "Please enter your text here limited to 300 characters.", rows: "4" %>
+    placeholder: textarea_text, rows: "4" %>
     </div>
   </div>
   <div class="field">
     <div class="control buttons is-right">
-      <%= form.submit "Submit", class: "button is-black" %>
+      <%= form.submit button_text, class: "button is-black" %>
     </div>
   </div>
 <% end %>

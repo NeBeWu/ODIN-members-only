@@ -7,10 +7,14 @@ class Post < ApplicationRecord
   has_many :reposts, class_name: 'Post', foreign_key: 'source_id'
   belongs_to :source, class_name: 'Post', optional: true
 
-  validates :content, presence: true, length: { in: 1..300 }, unless: :a_repost?
+  validates :content, presence: true, length: { in: 1..300 }, unless: :repost?
   validates :user_id, presence: true
 
-  def a_repost?
+  def reply?
+    !parent.nil?
+  end
+
+  def repost?
     !source.nil?
   end
 end

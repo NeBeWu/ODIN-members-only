@@ -1,3 +1,5 @@
+# List of tasks
+
 Check post CRUD-
   Removes title attribute from post+
   Customize new page (used when post creation goes wrong)+
@@ -5,6 +7,7 @@ Check post CRUD-
   Transfered show link to a reply link in the navbar+
   Routes accesses
   Add link top post by clicking it
+  Rename post to new_post
 Check user CRUD-
   Add user title limit 32 (may be null), username 16, password 8 (minimum)+
 Interaction
