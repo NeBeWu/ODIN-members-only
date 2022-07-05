@@ -51,6 +51,26 @@ class PostsController < ApplicationController
     render :show, status: :unprocessable_entity
   end
 
+  def add_like
+    @post = Post.find(params[:id])
+    if request.post?
+      @post.likes << current_user
+      redirect_back_or_to :root
+    else
+      render :index, status: :unprocessable_entity
+    end
+  end
+
+  def remove_like
+    @post = Post.find(params[:id])
+    if request.delete?
+      @post.likes.delete current_user
+      redirect_back_or_to :root
+    else
+      render :index, status: :unprocessable_entity
+    end
+  end
+
   # PATCH/PUT /posts/1 or /posts/1.json
   def update; end
 

@@ -6,7 +6,12 @@ Rails.application.routes.draw do
     get 'users', to: 'posts#index'
   end
 
-  resources :posts
+  resources :posts do
+    member do
+      post 'add_like'
+      delete 'remove_like'
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

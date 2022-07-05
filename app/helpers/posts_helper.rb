@@ -29,4 +29,10 @@ module PostsHelper
       repost.user_id == current_user.id
     end.first
   end
+
+  def check_like?(resource)
+    resource.likes.any? do |like|
+      like.id == current_user.id
+    end
+  end
 end
