@@ -1,7 +1,7 @@
-<div class="content">
+<div class="content" style="margin-bottom: 0.5rem">
   <% if user_signed_in? %>
-    <p style="margin-bottom:0">
-      <strong><%= post.user.nil? ? "The owner of this post was deleted" : "#{post.user.title}" %></strong>
+    <p style="margin-bottom:0;">
+      <strong style="color: black"><%= post.user.nil? ? "The owner of this post was deleted" : "#{post.user.title}" %></strong>
       <i><%= post.user.nil? ? "@deleted_user" : "@#{post.user.username}" %></i>
       <%= "\u00b7" %>
       <%= time_passed(post) %>

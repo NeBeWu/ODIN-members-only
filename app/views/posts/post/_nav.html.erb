@@ -1,6 +1,6 @@
 <nav class="level is-mobile">
   <div class="level-item">
-    <%= link_to resource do %>
+    <%= link_to resource, class: "submitbutton" do %>
       <span class="icon is-small"><i class="fa fa-reply" ></i></span>
       <%= resource.replies.count %>
     <% end %>
@@ -13,5 +13,8 @@
   </div>
   <div class="level-item">
     <%= render "posts/post/nav/dislike", resource: resource, post: post %>
+  </div>
+  <div class="level-item">
+    <span class="icon is-small"><i class="fa fa-bar-chart" ></i></span>
   </div>
 </nav>

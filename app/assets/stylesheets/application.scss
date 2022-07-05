@@ -21,6 +21,10 @@
 //     border-color: darkgray;
 // }
 
+a {
+  color: hsl(0, 0, 48%);
+}
+
 .field.hidden {
   margin: 0px;
 }
@@ -40,18 +44,32 @@
   margin-left: 0.25rem;
 }
 
+nav>.level-item {
+  justify-content: left;
+}
+
 .separated {
-  padding-top: 0.75rem;
+  padding-top: 0.6rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 .block.separated {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.7rem;
 }
 
 .separated + .separated {
   border-top: 1px solid darkgray;
+}
+
+.submitbutton {
+  color: black;
+  padding: 0px;
+  background-color: transparent;
+  text-decoration: inline;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .submitlink {

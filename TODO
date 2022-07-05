@@ -6,12 +6,14 @@ Check post CRUD-
   Customize show page+
   Transfered show link to a reply link in the navbar+
   Rename post to new_post+
-  Change links colors
+  Change links colors+
   Routes accesses
   Add link top post by clicking it
   Repost of repost behaviour
 Check user CRUD-
   Add user title limit 32 (may be null), username 16, password 8 (minimum)+
+  User page
+  More user interaction
 Interaction
   Devise error message I18n customize-
   Login with empty fields should equal signup+
@@ -21,6 +23,8 @@ Features
   Implement repost+
   Implement like+
   Implement dislike+
+  Implement share
+  Implement analytics
   Implement bookmark
 Big features
   Implement user top posts

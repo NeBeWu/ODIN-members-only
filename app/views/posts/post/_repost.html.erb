@@ -5,8 +5,12 @@
     </div>
     <div class="level-item repost-title">
       <p>
-        <a href="">
-          <%= "#{post.user.title} Reposted" %>
+        <a href=""><%# link to repost user %>
+          <% if post.user == current_user %>
+            <strong><%= "You Reposted" %></strong>
+          <% else %>
+            <strong><%= "#{post.user.title} Reposted" %></strong>
+          <% end %>
         </a>
       </p>
     </div>
