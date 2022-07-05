@@ -12,9 +12,6 @@
     <%= render "posts/post/nav/like", resource: resource, post: post %>
   </div>
   <div class="level-item">
-    <%= link_to nil do %>
-      <span class="icon is-small"><i class="fa fa-thumbs-o-down" ></i></span>
-      <%= '7' %>
-    <% end %>
+    <%= render "posts/post/nav/dislike", resource: resource, post: post %>
   </div>
 </nav>

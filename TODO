@@ -6,6 +6,7 @@ Check post CRUD-
   Customize show page+
   Transfered show link to a reply link in the navbar+
   Rename post to new_post+
+  Change links colors
   Routes accesses
   Add link top post by clicking it
   Repost of repost behaviour
@@ -18,12 +19,12 @@ Interaction
 Features
   Implement reply+
   Implement repost+
-  Implement like
-  Implement dislike
+  Implement like+
+  Implement dislike+
   Implement bookmark
 Big features
   Implement user top posts
 
 ## Current task
 
-Set up like...
+Change links color

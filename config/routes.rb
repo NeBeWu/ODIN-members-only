@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     member do
       post 'add_like'
       delete 'remove_like'
+      post 'add_dislike'
+      delete 'remove_dislike'
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

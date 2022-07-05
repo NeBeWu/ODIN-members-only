@@ -35,4 +35,10 @@ module PostsHelper
       like.id == current_user.id
     end
   end
+
+  def check_dislike?(resource)
+    resource.dislikes.any? do |dislike|
+      dislike.id == current_user.id
+    end
+  end
 end

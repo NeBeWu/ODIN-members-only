@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_post, only: %i[show edit update destroy add_like remove_like add_dislike remove_dislike]
   before_action :authenticate_user!, except: %i[index show]
 
   helper PostsHelper
@@ -52,9 +52,10 @@ class PostsController < ApplicationController
   end
 
   def add_like
-    @post = Post.find(params[:id])
     if request.post?
       @post.likes << current_user
+      @post.dislikes.delete current_user
+
       redirect_back_or_to :root
     else
       render :index, status: :unprocessable_entity
@@ -62,9 +63,30 @@ class PostsController < ApplicationController
   end
 
   def remove_like
-    @post = Post.find(params[:id])
     if request.delete?
       @post.likes.delete current_user
+
+      redirect_back_or_to :root
+    else
+      render :index, status: :unprocessable_entity
+    end
+  end
+
+  def add_dislike
+    if request.post?
+      @post.dislikes << current_user
+      @post.likes.delete current_user
+
+      redirect_back_or_to :root
+    else
+      render :index, status: :unprocessable_entity
+    end
+  end
+
+  def remove_dislike
+    if request.delete?
+      @post.dislikes.delete current_user
+
       redirect_back_or_to :root
     else
       render :index, status: :unprocessable_entity

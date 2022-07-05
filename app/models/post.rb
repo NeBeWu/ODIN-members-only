@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   belongs_to :source, class_name: 'Post', optional: true
 
   has_and_belongs_to_many :likes, class_name: 'User', join_table: :likes
+  has_and_belongs_to_many :dislikes, class_name: 'User', join_table: :dislikes
 
   validates :content, presence: true, length: { in: 1..300 }, unless: :repost?
   validates :user_id, presence: true
