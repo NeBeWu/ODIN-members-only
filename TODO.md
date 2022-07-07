@@ -7,9 +7,9 @@ Check post CRUD-
   Transfered show link to a reply link in the navbar+
   Rename post to new_post+
   Change links colors+
-  Routes accesses
+  Repost of repost behaviour+
   Add link top post by clicking it
-  Repost of repost behaviour
+  Routes accesses
 Check user CRUD-
   Add user title limit 32 (may be null), username 16, password 8 (minimum)+
   User page
@@ -31,4 +31,3 @@ Big features
 
 ## Current task
 
-Change links color

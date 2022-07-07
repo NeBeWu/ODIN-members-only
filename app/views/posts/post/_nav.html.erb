@@ -1,20 +1,20 @@
 <nav class="level is-mobile">
   <div class="level-item">
-    <%= link_to resource, class: "submitbutton" do %>
-      <span class="icon is-small"><i class="fa fa-reply" ></i></span>
+    <%= link_to resource, class: 'submitbutton' do %>
+      <span class="icon is-small"><i class="fa fa-reply"></i></span>
       <%= resource.replies.count %>
     <% end %>
   </div>
   <div class="level-item">
-    <%= render "posts/post/nav/repost", resource: resource, post: post %>
+    <%= render 'posts/post/nav/repost', resource:, post: %>
   </div>
   <div class="level-item">
-    <%= render "posts/post/nav/like", resource: resource, post: post %>
+    <%= render 'posts/post/nav/like', resource:, post: %>
   </div>
   <div class="level-item">
-    <%= render "posts/post/nav/dislike", resource: resource, post: post %>
+    <%= render 'posts/post/nav/dislike', resource:, post: %>
   </div>
   <div class="level-item">
-    <span class="icon is-small"><i class="fa fa-bar-chart" ></i></span>
+    <span class="icon is-small"><i class="fa fa-bar-chart"></i></span>
   </div>
 </nav>

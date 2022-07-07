@@ -2,7 +2,7 @@
   <div class="level" style="padding-left: 1rem; padding-right: 1rem;">
     <div class="level-left">
       <div class="level-item">
-        <%= link_to "Back", posts_path %>
+        <%= link_to 'Back', posts_path %>
       </div>
     </div>
     <div class="level-item">
@@ -10,16 +10,16 @@
     </div>
     <div class="level-right">
       <div class="level-item">
-        <%= button_to "Delete", @post, method: :delete,
-                form: { data: { "turbo-confirm": "Are you sure?" } },
-                class: "submitlink has-text-danger" %>
+        <%= button_to 'Delete', @post, method: :delete,
+                                       form: { data: { 'turbo-confirm': 'Are you sure?' } },
+                                       class: 'submitlink has-text-danger' %>
       </div>
     </div>
   </div>
   <%= render @post %>
   <div class="block separated">
-    <%= render "form", button_text: 'Reply',
-      textarea_text: 'Post your reply' %>
+    <%= render 'form', textarea_text: 'Post your reply',
+                       button_text: 'Reply' %>
   </div>
   <%= render @replies %>
 </div>

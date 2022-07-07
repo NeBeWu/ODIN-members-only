@@ -2,8 +2,8 @@
   <% repost = source_of_current_user_repost?(post) ? select_current_user_repost(post) : post %>
   <%= form_with model: repost, method: :delete do |form| %>
     <div class="field">
-      <%= form.button nil, class: "submitlink has-text-info" do %>
-        <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
+      <%= form.button nil, class: 'submitlink has-text-info' do %>
+        <span class="icon is-small"><i class="fa fa-retweet"></i></span>
         <%= resource.reposts.count %>
       <% end %>
     </div>
@@ -14,8 +14,8 @@
       <%= form.hidden_field :source_id, value: resource.id %>
     </div>
     <div class="field">
-      <%= form.button nil, class: "submitlink" do %>
-        <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
+      <%= form.button nil, class: 'submitlink' do %>
+        <span class="icon is-small"><i class="fa fa-retweet"></i></span>
         <%= resource.reposts.count %>
       <% end %>
     </div>

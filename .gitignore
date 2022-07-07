@@ -37,5 +37,11 @@
 # Ignore asdf files
 /.tool-versions
 
-# Ignore rubocop files
+# Ignore lint/format files
 /.rubocop.yml
+/.erb-lint.yml
+/config/definitions.rb
+/.stylelintrc.json
+/package.json
+/package-lock.json
+/node_modules

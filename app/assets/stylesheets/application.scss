@@ -14,23 +14,25 @@
  *= require_self
  */
 
- @import "bulma";
+@import "bulma";
 
 // .media + .media {
 //     border-width: 1px;
 //     border-color: darkgray;
 // }
 
+/* stylelint-disable color-function-notation */
 a {
-  color: hsl(0, 0, 48%);
+  color: hsl(0deg, 0%, 48%);
 }
+/* stylelint-enable color-function-notation */
 
 .field.hidden {
-  margin: 0px;
+  margin: 0;
 }
 
 .level.repost {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   height: 1.2rem;
   font-size: 0.9em;
 }
@@ -44,7 +46,7 @@ a {
   margin-left: 0.25rem;
 }
 
-nav>.level-item {
+nav > .level-item {
   justify-content: left;
 }
 
@@ -64,7 +66,7 @@ nav>.level-item {
 
 .submitbutton {
   color: black;
-  padding: 0px;
+  padding: 0;
   background-color: transparent;
   text-decoration: inline;
   border: none;
@@ -73,7 +75,7 @@ nav>.level-item {
 }
 
 .submitlink {
-  padding: 0px;
+  padding: 0;
   background-color: transparent;
   text-decoration: inline;
   border: none;

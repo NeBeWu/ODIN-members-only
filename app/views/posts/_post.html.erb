@@ -1,13 +1,13 @@
-<div class="block separated" style="<%= "padding-top: 0.25rem" if user_signed_in? && post.repost? %>">
-  <%= render "posts/post/repost", post: post if user_signed_in? && post.repost? %>
+<div class="block separated" style="<%= 'padding-top: 0.25rem' if user_signed_in? && post.repost? %>">
+  <%= render 'posts/post/repost', post: post if user_signed_in? && post.repost? %>
   <article class="media">
     <% resource = post.repost? ? post.source : post %>
     <div class="media-left">
-      <%= render "posts/post/user", post: resource %>
+      <%= render 'posts/post/user', post: resource %>
     </div>
     <div class="media-content">
-      <%= render "posts/post/content", post: resource %>
-      <%= render "posts/post/nav", resource: resource, post: post if user_signed_in? %>
+      <%= render 'posts/post/content', post: resource %>
+      <%= render 'posts/post/nav', resource: resource, post: post if user_signed_in? %>
     </div>
   </article>
 </div>

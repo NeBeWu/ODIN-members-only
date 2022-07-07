@@ -1,13 +1,13 @@
 <div class="level repost">
   <div class="level-left">
     <div class="level-item repost-symbol">
-      <span class="icon is-small"><i class="fa fa-retweet" ></i></span>
+      <span class="icon is-small"><i class="fa fa-retweet"></i></span>
     </div>
     <div class="level-item repost-title">
       <p>
         <a href=""><%# link to repost user %>
           <% if post.user == current_user %>
-            <strong><%= "You Reposted" %></strong>
+            <strong><%= 'You Reposted' %></strong>
           <% else %>
             <strong><%= "#{post.user.title} Reposted" %></strong>
           <% end %>
