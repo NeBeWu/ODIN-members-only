@@ -1,0 +1,9 @@
+<div class="display-bg">
+  <figure class="image is-128x128" style="position: relative; top: 136px">
+    <% if !@user.nil? %>
+      <%= gravatar_image_tag(@user&.email, alt: @user&.username, class: 'is-rounded', style: 'border: 1px solid white') %>
+    <% else %>
+      <%= image_tag 'pixil-frame-0.png', class: 'is-rounded' %>
+    <% end %>
+  </figure>
+</div>

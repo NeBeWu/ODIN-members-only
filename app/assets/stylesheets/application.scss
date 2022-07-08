@@ -27,6 +27,11 @@ a {
 }
 /* stylelint-enable color-function-notation */
 
+.display-bg {
+  height: 200px;
+  background-image: url("user-display-bg.jpg");
+}
+
 .field.hidden {
   margin: 0;
 }

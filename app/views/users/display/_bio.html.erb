@@ -1,0 +1,22 @@
+<div class="block">
+  <div class="level" style="padding: 1rem">
+    <div class="level-left"></div>
+    <div class="level-right">
+      <div class="level-item">
+        <a class="button" href="/user/edit">Edit profile</a>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h1 class="title is-4"><%= @user.nil? ? 'The owner of this post was deleted' : @user.title %></h1>
+    <h2 class="subtitle is-6"><%= @user.nil? ? '@deleted_user' : "@#{@user.username}" %></h2>
+  </div>
+  <div class="block"><%#= @user.bio %></div>
+  <div class="block"><%#= @user.location %></div>
+  <div class="block"><%#= @user.website %></div>
+  <div class="block"><%#= @user.join_date %></div>
+  <div class="block">
+    <%#= @user.following.count %>
+    <%#= @user.followers.count %>
+  </div>
+</div>

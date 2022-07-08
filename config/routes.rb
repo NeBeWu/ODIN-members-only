@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  # Defines the root path route ("/")
+  root 'posts#index'
+
   devise_for :users, path: 'user', path_names: { sign_in: 'login', sign_out: 'logout' }
 
   devise_scope :user do
-    # Redirests signing out users back to sign-in (necessary when deleting user)
+    # Redirects signing out users back to sign-in (necessary when deleting user)
     get 'users', to: 'posts#index'
   end
+
+  resources :users
 
   resources :posts do
     member do
@@ -15,7 +20,4 @@ Rails.application.routes.draw do
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  root 'posts#index'
 end

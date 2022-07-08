@@ -13,6 +13,7 @@ Check post CRUD-
 Check user CRUD-
   Add user title limit 32 (may be null), username 16, password 8 (minimum)+
   User page
+  Only post.user should be able to delete post
   More user interaction
 Interaction
   Devise error message I18n customize-
@@ -30,4 +31,4 @@ Big features
   Implement user top posts
 
 ## Current task
-
+Implement user page
