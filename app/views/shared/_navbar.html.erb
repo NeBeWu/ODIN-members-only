@@ -1,6 +1,6 @@
 <nav class="navbar is-black" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <%= link_to root_path, class: "navbar-item" do %>
+    <%= link_to root_path, class: 'navbar-item' do %>
       <p class="title is-4 has-text-white">Members Only</p>
     <% end %>
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -14,11 +14,11 @@
       <div class="navbar-item">
         <div class="buttons">
           <% if user_signed_in? %>
-            <%= link_to "Edit", edit_user_registration_path, class: "button is-light is-outlined" %>
-            <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "button is-light is-outlined" %>
+            <%= link_to 'Edit', edit_user_registration_path, class: 'button is-light is-outlined' %>
+            <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete }, class: 'button is-light is-outlined' %>
           <% else %>
-            <%= link_to 'Sign Up', new_user_registration_path, class: "button is-light is-outlined" %>
-            <%= link_to 'Login', new_user_session_path, class: "button is-light is-outlined" %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'button is-light is-outlined' %>
+            <%= link_to 'Login', new_user_session_path, class: 'button is-light is-outlined' %>
           <% end %>
         </div>
       </div>
