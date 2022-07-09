@@ -15,8 +15,14 @@
   <div class="block"><%= @user.location %></div>
   <div class="block"><%= @user.website %></div>
   <div class="block"><%= join_date(@user) %></div>
-  <div class="block">
-    <%#= @user.following.count %>
-    <%#= @user.followers.count %>
+  <div class="level">
+    <div class="level-left">
+      <div class="level-item">
+        <p><strong><%= @user.followees.count %></strong> Following</p>
+      </div>
+      <div class="level-item">
+        <p><strong><%= @user.followers.count %></strong> Followers</p>
+      </div>
+    </div>
   </div>
 </div>

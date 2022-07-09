@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :nullify
 
+  has_and_belongs_to_many :followers, class_name: 'User', join_table: :follows, foreign_key: :followee_id,
+                                      association_foreign_key: :follower_id
+  has_and_belongs_to_many :followees, class_name: 'User', join_table: :follows, foreign_key: :follower_id,
+                                      association_foreign_key: :followee_id
+
   has_and_belongs_to_many :liked_posts, class_name: 'Post', join_table: :likes
   has_and_belongs_to_many :disliked_posts, class_name: 'Post', join_table: :dislikes
 

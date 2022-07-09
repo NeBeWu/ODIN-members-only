@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_08_212105) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_09_031404) do
   create_table "dislikes", id: false, force: :cascade do |t|
     t.integer "post_id", null: false
     t.integer "user_id", null: false
@@ -18,6 +18,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_08_212105) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_dislikes_on_post_id"
     t.index ["user_id"], name: "index_dislikes_on_user_id"
+  end
+
+  create_table "follows", id: false, force: :cascade do |t|
+    t.integer "followee_id", null: false
+    t.integer "follower_id", null: false
+    t.index ["followee_id"], name: "index_follows_on_followee_id"
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
   end
 
   create_table "likes", id: false, force: :cascade do |t|
