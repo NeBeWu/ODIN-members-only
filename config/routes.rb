@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     get 'users', to: 'posts#index'
   end
 
-  resources :users
+  resources :users do
+    member do
+      post 'follow'
+      delete 'unfollow'
+    end
+  end
 
   resources :posts do
     member do

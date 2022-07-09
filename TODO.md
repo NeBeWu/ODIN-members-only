@@ -2,7 +2,7 @@
 
 Check post CRUD-
   Removes title attribute from post+
-  Customize new page (used when post creation goes wrong)+
+  Customize new page (used when post creation goes wrong+
   Customize show page+
   Transfered show link to a reply link in the navbar+
   Rename post to new_post+
@@ -13,8 +13,8 @@ Check post CRUD-
 Check user CRUD-
   Add user title limit 32 (may be null), username 16, password 8 (minimum)+
   Implement user edit profile page+
+  Only post.user should be able to delete post+
   User page
-  Only post.user should be able to delete post
   More user interaction
 Interaction
   Devise error message I18n customize-

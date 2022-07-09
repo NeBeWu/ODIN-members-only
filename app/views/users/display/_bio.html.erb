@@ -3,7 +3,11 @@
     <div class="level-left"></div>
     <div class="level-right">
       <div class="level-item">
-        <%= link_to 'Edit profile', edit_user_path, class: 'button is-outlined' %>
+        <% if @user == current_user %>
+          <%= link_to 'Edit profile', edit_user_path, class: 'button is-outlined' %>
+        <% else %>
+          <%= render 'users/display/bio/follow' %>
+        <% end %>
       </div>
     </div>
   </div>

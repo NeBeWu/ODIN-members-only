@@ -1,0 +1,15 @@
+<% if current_user.followees.exists?(@user.id) %>
+  <%= form_with url: unfollow_user_path(@user), method: :delete do |form| %>
+    <div class="field">
+      <%= form.submit 'Unfollow', class: 'button has-text-weight-bold
+      has-text-light has-background-dark' %>
+    </div>
+  <% end %>
+<% else %>
+  <%= form_with url: follow_user_path(@user), method: :post do |form| %>
+    <div class="field">
+      <%= form.button 'Follow', class: 'button has-text-weight-bold
+      has-text-dark has-background-light' %>
+    </div>
+  <% end %>
+<% end %>
