@@ -12,6 +12,7 @@ Check post CRUD-
   Routes accesses
 Check user CRUD-
   Add user title limit 32 (may be null), username 16, password 8 (minimum)+
+  Implement user edit profile page+
   User page
   Only post.user should be able to delete post
   More user interaction

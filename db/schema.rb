@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_05_003908) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_08_212105) do
   create_table "dislikes", id: false, force: :cascade do |t|
     t.integer "post_id", null: false
     t.integer "user_id", null: false
@@ -51,6 +51,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_05_003908) do
     t.datetime "updated_at", null: false
     t.string "username", limit: 16, null: false
     t.string "title", limit: 32
+    t.string "bio", limit: 160
+    t.string "location", limit: 30
+    t.string "website", limit: 100
+    t.date "birth"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
