@@ -30,10 +30,12 @@
         <span class="icon is-small is-left" style="margin-right: 1.5rem"><i class="fa fa-list"></i></span>Lists
       <% end %>
     </li>
-    <li>
-      <%= link_to user_path(current_user.id), class: '' do %>
-        <span class="icon is-small is-left" style="margin-right: 1.5rem"><i class="fa fa-user"></i></span>Profile
-      <% end %>
-    </li>
+    <% if current_user %>
+      <li>
+        <%= link_to user_path(current_user.id), class: '' do %>
+          <span class="icon is-small is-left" style="margin-right: 1.5rem"><i class="fa fa-user"></i></span>Profile
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 </nav>
