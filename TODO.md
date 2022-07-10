@@ -20,6 +20,7 @@ Interaction
   Devise error message I18n customize-
   Login with empty fields should equal signup+
   Remove show from non-users+
+  Partially load pages
 Features
   Implement reply+
   Implement repost+
