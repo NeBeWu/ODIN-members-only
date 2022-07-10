@@ -1,6 +1,8 @@
 <figure class="image is-64x64">
   <% if user_signed_in? && !post.user.nil? %>
-    <%= gravatar_image_tag(post.user&.email, alt: post.user&.username, class: 'is-rounded') %>
+    <%= link_to user_path(post.user.id), class: '' do %>
+      <%= gravatar_image_tag(post.user&.email, alt: post.user&.username, class: 'is-rounded') %>
+    <% end %>
   <% else %>
     <%= image_tag 'pixil-frame-0.png', class: 'is-rounded' %>
   <% end %>
