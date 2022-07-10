@@ -14,6 +14,14 @@
  *= require_self
  */
 
+/* stylelint-disable color-function-notation */
+$navbar-item-hover-color: hsl(0deg, 0%, 100%);
+$menu-item-color: hsl(0deg, 0%, 15%);
+$menu-item-radius: 100px;
+$menu-item-hover-color: hsl(0deg, 0%, 15%);
+$menu-item-hover-background-color: hsl(0deg, 0%, 85%);
+/* stylelint-enable color-function-notation */
+
 @import "bulma";
 
 // .media + .media {
