@@ -1,9 +1,9 @@
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <%# render "trends" %>
-      <%= render 'feed' %>
-      <%# render "who_to_follow" %>
+<div class="" style="padding: 0px; border: 1px solid darkgray;">
+  <% if user_signed_in? %>
+    <div class="block separated">
+      <%= render 'form', textarea_text: 'Please enter your text here limited to 300 characters.',
+                         button_text: 'Submit' %>
     </div>
-  </div>
-</section>
+  <% end %>
+  <%= render @posts %>
+</div>

@@ -1,9 +1,27 @@
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <%# render "trends" %>
-      <%= render 'display' %>
-      <%# render "who_to_follow" %>
+<div class="" style="padding: 0px; border: 1px solid darkgray;">
+  <div class="level" style="padding-left: 1rem; padding-right: 1rem;">
+    <div class="level-left">
+      <div class="level-item">
+        <%= link_to 'Back', posts_path %>
+      </div>
     </div>
+    <div class="level-item">
+      <h1 class="title">Thread</h1>
+    </div>
+    <% if @post.user == current_user %>
+      <div class="level-right">
+        <div class="level-item">
+          <%= button_to 'Delete', @post, method: :delete,
+                                         form: { data: { 'turbo-confirm': 'Are you sure?' } },
+                                         class: 'submitlink has-text-danger' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-</section>
+  <%= render @post %>
+  <div class="block separated">
+    <%= render 'form', textarea_text: 'Post your reply',
+                       button_text: 'Reply' %>
+  </div>
+  <%= render @replies %>
+</div>

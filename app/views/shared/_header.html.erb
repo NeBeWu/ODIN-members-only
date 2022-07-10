@@ -1,0 +1,33 @@
+<aside class="menu">
+  <div>
+    <div class="navbar-brand">
+      <%= link_to 'Members Only', root_path, class: 'navbar-item title is-4 has-text-white has-background-black' %>
+    </div>
+    <div>
+      <nav class="menu-list">
+        <a>Home</a>
+        <a>Explore</a>
+        <a>Notifications</a>
+        <a>Messages</a>
+        <a>Bookmarks</a>
+        <a>Lists</a>
+        <a>Profile</a>
+        <div>
+          More
+        </div>
+      </nav>
+    </div>
+    <div>
+      <a href="">Post</a>
+    </div>
+  </div>
+  <div>
+    <% if  user_signed_in? %>
+      <%= link_to 'Edit', edit_user_registration_path, class: 'button is-outlined' %>
+      <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete }, class: 'button is-outlined' %>
+    <% else %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'button is-outlined' %>
+      <%= link_to 'Login', new_user_session_path, class: 'button is-outlined' %>
+    <% end %>
+  </div>
+</aside>

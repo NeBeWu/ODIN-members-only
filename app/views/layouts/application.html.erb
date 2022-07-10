@@ -10,7 +10,6 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
     <% if flash[:notice] %>
       <div class="notification is-success">
         <button class="delete"></button>
@@ -23,6 +22,18 @@
         <p class="has-text-centered"><%= alert %></p>
       </div>
     <% end %>
-    <%= yield %>
+    <div class="container">
+      <div class="columns">
+        <header class="column is-3">
+          <%= render 'shared/header' %>
+        </header>
+        <main class='column is-6'>
+          <%= yield %>
+        </main>
+        <div class="column is-3">
+          <% render 'shared/sidebar' %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

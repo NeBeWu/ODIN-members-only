@@ -1,9 +1,41 @@
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <%# render "trends" %>
-      <%= render 'form' %>
-      <%# render "who_to_follow" %>
+<div class="">
+  <h2 class="title is-2 has-text-centered">Edit user profile</h2>
+  <%= form_with model: @user, method: 'patch' do |form| %>
+    <div class="field">
+      <%= form.label :title, class: 'label' %>
+      <div class="control has-icons-left">
+        <%= form.text_field :title, class: 'input', placeholder: 'Some cool title',
+                                    required: true, autofocus: true %>
+      </div>
     </div>
-  </div>
-</section>
+    <div class="field">
+      <%= form.label :bio, class: 'label' %>
+      <div class="control has-icons-left">
+        <%= form.text_area :bio, class: 'textarea', placeholder: 'Bio' %>
+      </div>
+    </div>
+    <div class="field">
+      <%= form.label :location, class: 'label' %>
+      <div class="control has-icons-left">
+        <%= form.text_field :location, class: 'input', placeholder: 'Location' %>
+      </div>
+    </div>
+    <div class="field">
+      <%= form.label :website, class: 'label' %>
+      <div class="control has-icons-left">
+        <%= form.url_field :website, class: 'input', placeholder: 'Website' %>
+      </div>
+    </div>
+    <div class="field">
+      <%= form.label :birth, class: 'label' %>
+      <div class="control has-icons-left">
+        <%= form.date_field :birth, class: 'input' %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control buttons is-centered">
+        <%= form.submit 'Save', class: 'button is-black is-medium' %>
+      </div>
+    </div>
+  <% end %><br>
+</div>
