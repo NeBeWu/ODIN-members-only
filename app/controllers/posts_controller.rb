@@ -6,8 +6,14 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @new_post = Post.new
-    @posts = Post.all.order('created_at DESC')
+    if current_user
+      @new_post = Post.new
+      @posts = Post.all.includes(:user, :source, :reposts, :likes_posts, :likes, :dislikes_posts, :dislikes)
+                   .order('created_at DESC')
+    else
+      @posts = Post.all.includes(:source)
+                   .order('created_at DESC')
+    end
   end
 
   # GET /posts/1 or /posts/1.json
